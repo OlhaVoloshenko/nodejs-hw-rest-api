@@ -32,12 +32,6 @@ router.get("/:contactId", async (req, res, next) => {
     const result = await contacts.getContactById(contactId);
     if (!result) {
       throw RequestError(404, "Not Found");
-      // const error = new Error("Not found");
-      // error.status = 404;
-      // throw error;
-      // return res.status(404).json({
-      //   message: "Not found",
-      // });
     }
     res.json(result);
   } catch (error) {
@@ -84,7 +78,7 @@ router.delete("/:contactId", async (req, res, next) => {
       throw RequestError(404, "Not found");
     }
     res.json({
-      message: "Book remove",
+      message: "Contact deleted",
     });
   } catch (error) {
     next(error);
