@@ -1,20 +1,10 @@
 const express = require("express");
-const Joi = require("joi");
+// const Joi = require("joi");
 const contacts = require("../../models/contacts");
 const { RequestError } = require("../../helpers");
+const { contactsSchema } = require("../../schemas");
 
 const router = express.Router();
-
-const contactsSchema = Joi.object({
-  name: Joi.string().min(3).max(30).required(),
-  email: Joi.string()
-    .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } })
-    .required(),
-  phone: Joi.string()
-    .length(9)
-    .pattern(/^\d{3}-\d{2}-\d{2}$/)
-    .required(),
-});
 
 router.get("/", async (req, res, next) => {
   try {
