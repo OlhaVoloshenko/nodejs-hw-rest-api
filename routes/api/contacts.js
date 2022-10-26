@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get("/", ctrlWrapper(ctrl.listContacts));
 
-// router.get("/:contactId", ctrlWrapper(ctrl.getContactById));
+router.get("/:contactId", ctrlWrapper(ctrl.getContactById));
 
 router.post("/", validateBody(schemas.addSchema), ctrlWrapper(ctrl.addContact));
 // router.put(
