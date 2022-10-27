@@ -11,6 +11,7 @@ router.get("/", ctrlWrapper(ctrl.listContacts));
 router.get("/:contactId", isValidId, ctrlWrapper(ctrl.getContactById));
 
 router.post("/", validateBody(schemas.addSchema), ctrlWrapper(ctrl.addContact));
+
 router.put(
   "/:contactId",
   isValidId,
@@ -18,14 +19,7 @@ router.put(
   ctrlWrapper(ctrl.updateById)
 );
 router.patch(
-  "/:id/favorite",
-  isValidId,
-  validateBody(schemas.updateFavoriteSchema),
-  ctrlWrapper(ctrl.updateFavorite)
-);
-
-router.patch(
-  "/:id/favorite",
+  "/:contactId/favorite",
   isValidId,
   validateBody(schemas.updateFavoriteSchema),
   ctrlWrapper(ctrl.updateFavorite)
