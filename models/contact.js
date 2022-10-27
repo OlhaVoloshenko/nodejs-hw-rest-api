@@ -31,13 +31,16 @@ const contactSchema = new Schema({
   // }
   name: {
     type: String,
-    required: [true, "Set name for contact"],
+    // required: [true, "Set name for contact"],
+    required: true,
   },
   email: {
     type: String,
+    required: true,
   },
   phone: {
     type: String,
+    required: true,
   },
   favorite: {
     type: Boolean,
@@ -63,7 +66,7 @@ const schemas = {
   updateFavoriteSchema,
 };
 
-const Contact = model("contact", contactSchema);
+const Contact = model("contacts", contactSchema);
 
 module.exports = {
   Contact,
