@@ -6,8 +6,8 @@ const addSchema = Joi.object({
     .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } })
     .required(),
   phone: Joi.string()
-    .length(9)
-    .pattern(/^\d{3}-\d{2}-\d{2}$/)
+    .length(13)
+    .pattern(/^\d{3}-\d{3}-\d{2}-\d{2}$/)
     .required(),
 });
 
