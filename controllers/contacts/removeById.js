@@ -8,7 +8,7 @@ const removeById = async (req, res) => {
     throw RequestError(404, "Not found");
   }
   res.json({
-    message: "Contact deleted",
+    message: "Contact remove",
   });
 };
 
