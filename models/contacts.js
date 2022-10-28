@@ -26,7 +26,7 @@ const add = async ({ name, email, phone }) => {
     phone,
   };
   contacts.push(newContact);
-  await updateById(contacts);
+  await updateContacts(contacts);
   return newContact;
 };
 const removeById = async (contactId) => {
@@ -47,7 +47,7 @@ const updateById = async (contactId, { name, email, phone }) => {
     return null;
   }
   contacts[index] = { contactId, name, email, phone };
-  await updateById(contacts);
+  await updateContacts(contacts);
   return contacts[index];
 };
 
