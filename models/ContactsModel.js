@@ -50,10 +50,15 @@ const addSchema = Joi.object({
     default: false,
   },
 });
+const updateFavoriteSchema = Joi.object({
+  favorite: Joi.boolean().required(),
+});
 
 const schemas = {
   addSchema,
+  updateFavoriteSchema,
 };
+
 const ContactModel = model("Contact", ContactSchema);
 
 module.exports = {
