@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 const Joi = require("joi");
-const { handleSaveErrors } = require("../middlewares");
+const { handleSaveErrors } = require("../helpers");
 
 const phoneRegexp = /^\d{3}-\d{3}-\d{2}-\d{2}$/;
 
