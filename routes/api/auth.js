@@ -2,18 +2,19 @@ const express = require("express");
 const ctrl = require("../../controllers/auth");
 const { ctrlWrapper } = require("../../helpers");
 const { validateBody } = require("../../middlewares");
-const { schemas } = require("../../models/user");
+const { schemasUser } = require("../../models");
+
 const router = express.Router();
 
 router.post(
   "/register",
-  validateBody(schemas.registerSchema),
+  validateBody(schemasUser.registerSchema),
   ctrlWrapper(ctrl.register)
 );
 
 router.post(
   "/login",
-  validateBody(schemas.loginSchema),
+  validateBody(schemasUser.loginSchema),
   ctrlWrapper(ctrl.login)
 );
 

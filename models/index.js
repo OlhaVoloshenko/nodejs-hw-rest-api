@@ -1,5 +1,9 @@
-const ContactsModel = require("./ContactsModel");
+const { ContactModel, schemasContact } = require("./ContactModel");
+const { UserModel, schemasUser } = require("./UserModel");
 
 module.exports = {
-  ContactsModel,
+  ContactModel,
+  schemasContact,
+  UserModel,
+  schemasUser,
 };
